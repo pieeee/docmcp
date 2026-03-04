@@ -18,7 +18,7 @@ export function openDB(path: string): Database.Database {
   try {
     sqliteVec.load(db)
     vectorSupported = true
-  } catch (err) {
+  } catch (_err) {
     console.warn('Warning: sqlite-vec extension could not be loaded. Vector search disabled.')
     console.warn('BM25 keyword search will still work.')
     vectorSupported = false

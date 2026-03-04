@@ -47,20 +47,20 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
-    "lint": "eslint src --ext .ts",
+    "lint": "eslint src/",
     "postinstall": "node scripts/check-native-modules.js || true",
     "prepublishOnly": "npm run build && npm run test"
   },
   "devDependencies": {
+    "@eslint/js": "^9.0.0",
     "@types/better-sqlite3": "^7.6.13",
     "@types/node": "^22",
     "@types/turndown": "^5.0.6",
-    "@typescript-eslint/eslint-plugin": "^8.0.0",
-    "@typescript-eslint/parser": "^8.0.0",
     "@vitest/coverage-v8": "^2.1.9",
     "eslint": "^9.0.0",
     "tsx": "^4",
     "typescript": "^5",
+    "typescript-eslint": "^8.0.0",
     "vitest": "^2.1.9"
   },
   "dependencies": {

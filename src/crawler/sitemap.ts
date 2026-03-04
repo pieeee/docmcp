@@ -91,7 +91,7 @@ async function tryParseSitemap(url: string): Promise<string[]> {
     return []
   }
 
-  let text = await response.text()
+  const text = await response.text()
 
   // Handle gzipped sitemaps
   if (url.endsWith('.gz')) {
