@@ -1,0 +1,5 @@
+export { newProvider } from './factory.js'
+export type { EmbeddingProvider, InputType } from './types.js'
+export { BM25OnlyProvider } from './providers/bm25only.js'
+export { OpenAIProvider } from './providers/openai.js'
+export { AnthropicProvider } from './providers/anthropic.js'

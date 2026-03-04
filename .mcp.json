@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "docmcp": {
+      "command": "node",
+      "args": ["--import", "tsx", "/Users/sheikhahnafhasan/workspace/docmcp/src/index.ts", "serve"]
+    }
+  }
+}

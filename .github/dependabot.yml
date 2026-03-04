@@ -1,0 +1,39 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 10
+    groups:
+      # Group all non-major updates together
+      minor-and-patch:
+        patterns:
+          - "*"
+        exclude-patterns:
+          - "@types/*"
+        update-types:
+          - "minor"
+          - "patch"
+      # Group type definitions
+      types:
+        patterns:
+          - "@types/*"
+      # Group dev dependencies
+      dev-dependencies:
+        dependency-type: "development"
+        update-types:
+          - "minor"
+          - "patch"
+    commit-message:
+      prefix: "deps"
+      include: "scope"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    commit-message:
+      prefix: "ci"
