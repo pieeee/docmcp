@@ -7,7 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.1.0] - 2025-03-02
+## [0.2.0] - 2026-03-05
+
+### Added
+
+- OpenAPI/Swagger spec support with `--openapi` flag
+- New parser for OpenAPI 3.x and Swagger 2.x specs
+- Extracts endpoints, parameters, request bodies, responses, and schemas
+- 19 new tests for OpenAPI parsing (101 total)
+
+## [0.1.0] - 2026-03-05
 
 ### Added
 
@@ -28,5 +37,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Input size limits to prevent DoS
 - Graceful error handling in MCP server
 
-[Unreleased]: https://github.com/sheikhahnafhasan/docmcp/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/sheikhahnafhasan/docmcp/releases/tag/v0.1.0
+[Unreleased]: https://github.com/pieeee/docmcp/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/pieeee/docmcp/compare/v0.1.0...v0.2.0
+[0.1.0]: https://github.com/pieeee/docmcp/releases/tag/v0.1.0

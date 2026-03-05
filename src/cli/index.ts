@@ -11,7 +11,7 @@ export function runCLI(): void {
   program
     .name('docmcp')
     .description('Index documentation websites and search them from AI tools')
-    .version('0.1.0')
+    .version('0.2.0')
 
   program
     .command('init')
