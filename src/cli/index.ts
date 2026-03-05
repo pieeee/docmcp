@@ -29,6 +29,7 @@ export function runCLI(): void {
     .option('--delay <ms>', 'Delay between requests in ms', parseInt)
     .option('--concurrency <number>', 'Parallel requests', parseInt)
     .option('--no-sitemap', 'Skip sitemap, force recursive crawl')
+    .option('--openapi', 'Treat URL as OpenAPI/Swagger JSON spec')
     .action(addCommand)
 
   program

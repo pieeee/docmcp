@@ -13,6 +13,7 @@ export interface CrawledPage {
   html: string
   title: string
   statusCode: number
+  contentType?: 'html' | 'openapi' | 'json'
 }
 
 export interface CrawlResult {

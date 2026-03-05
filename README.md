@@ -109,7 +109,19 @@ Options:
   --delay <ms>                Delay between requests (default: 200)
   --concurrency <number>      Parallel requests (default: 3)
   --no-sitemap                Skip sitemap, force recursive crawl
+  --openapi                   Treat URL as OpenAPI/Swagger JSON spec
 ```
+
+### OpenAPI/Swagger Support
+
+You can index OpenAPI specs directly:
+
+```bash
+docmcp add https://api.example.com/openapi.json --openapi
+docmcp add https://petstore.swagger.io/v2/swagger.json --openapi
+```
+
+This parses the spec and indexes all endpoints, parameters, and schemas for search.
 
 ## MCP Tools
 
