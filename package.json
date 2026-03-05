@@ -14,13 +14,13 @@
     "vector-search",
     "bm25"
   ],
-  "homepage": "https://github.com/sheikhahnafhasan/docmcp",
+  "homepage": "https://github.com/pieeee/docmcp",
   "bugs": {
-    "url": "https://github.com/sheikhahnafhasan/docmcp/issues"
+    "url": "https://github.com/pieeee/docmcp/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sheikhahnafhasan/docmcp.git"
+    "url": "git+https://github.com/pieeee/docmcp.git"
   },
   "license": "MIT",
   "author": "Sheikh Ahnaf Hasan",
