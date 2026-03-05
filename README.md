@@ -18,7 +18,7 @@ npm install -g docmcp
 
 ### Requirements
 
-- Node.js 18+
+- Node.js 20+
 - One of: Anthropic API key, OpenAI API key, or use BM25-only mode (no API needed)
 
 ## Quick Start
