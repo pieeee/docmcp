@@ -13,7 +13,7 @@ Index any documentation website and search it from AI coding assistants via the 
 ## Installation
 
 ```bash
-npm install -g docmcp
+npm install -g @pieeee/docmcp
 ```
 
 ### Requirements
