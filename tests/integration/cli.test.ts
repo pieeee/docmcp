@@ -4,9 +4,13 @@ import { spawn } from 'child_process'
 describe('CLI Integration', () => {
   const runCLI = (args: string[]): Promise<{ stdout: string; stderr: string; code: number | null }> => {
     return new Promise((resolve) => {
-      const proc = spawn('node', ['--import', 'tsx', 'src/index.ts', ...args], {
+      // Use npx tsx for cross-platform compatibility
+      const isWindows = process.platform === 'win32'
+      const command = isWindows ? 'npx.cmd' : 'npx'
+      const proc = spawn(command, ['tsx', 'src/index.ts', ...args], {
         cwd: process.cwd(),
         stdio: ['pipe', 'pipe', 'pipe'],
+        shell: isWindows, // Required for npx on Windows
       })
 
       let stdout = ''

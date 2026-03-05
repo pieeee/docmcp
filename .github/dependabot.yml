@@ -6,8 +6,12 @@ updates:
       interval: "weekly"
       day: "monday"
     open-pull-requests-limit: 10
+    # Ignore major version bumps - these require manual review
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
     groups:
-      # Group all non-major updates together
+      # Group all minor/patch updates together
       minor-and-patch:
         patterns:
           - "*"
@@ -20,9 +24,6 @@ updates:
       types:
         patterns:
           - "@types/*"
-      # Group dev dependencies
-      dev-dependencies:
-        dependency-type: "development"
         update-types:
           - "minor"
           - "patch"
