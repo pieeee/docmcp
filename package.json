@@ -64,7 +64,7 @@
     "vitest": "^2.1.9"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.78.0",
+    "@anthropic-ai/sdk": "^0.80.0",
     "@clack/prompts": "^1.0.1",
     "@modelcontextprotocol/sdk": "^1.27.0",
     "better-sqlite3": "^12.6.2",
