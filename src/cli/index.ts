@@ -1,3 +1,6 @@
+import { readFileSync } from 'node:fs'
+import { fileURLToPath } from 'node:url'
+import { dirname, join } from 'node:path'
 import { Command } from 'commander'
 import { initCommand } from './commands/init.js'
 import { addCommand } from './commands/add.js'
@@ -5,13 +8,16 @@ import { listCommand } from './commands/list.js'
 import { removeCommand } from './commands/remove.js'
 import { serveCommand } from './commands/serve.js'
 
+const pkgPath = join(dirname(fileURLToPath(import.meta.url)), '..', '..', 'package.json')
+const { version } = JSON.parse(readFileSync(pkgPath, 'utf8')) as { version: string }
+
 export function runCLI(): void {
   const program = new Command()
 
   program
     .name('docmcp')
     .description('Index documentation websites and search them from AI tools')
-    .version('0.2.0')
+    .version(version)
 
   program
     .command('init')
