@@ -121,6 +121,16 @@ describe('cleanHTML', () => {
     expect(() => cleanHTML(html)).not.toThrow()
   })
 
+  it('should not throw when script/style bloat pushes raw HTML past the limit', () => {
+    // Simulates Next.js SSR pages with a multi-MB __NEXT_DATA__ blob
+    const scriptBloat = 'a'.repeat(6 * 1024 * 1024)
+    const html = `<html><body><script id="__NEXT_DATA__">${scriptBloat}</script><main>Real content</main></body></html>`
+
+    const result = cleanHTML(html)
+    expect(result).toContain('Real content')
+    expect(result).not.toContain('aaaa')
+  })
+
   it('should remove table of contents', () => {
     const html = `
       <html>

@@ -60,12 +60,19 @@ const MAIN_CONTENT_SELECTORS = [
 ]
 
 export function cleanHTML(html: string): string {
-  // Prevent DoS from oversized HTML
-  if (html.length > MAX_HTML_SIZE) {
+  // Strip script/style blocks up front — SSR/SSG doc sites (e.g. Next.js)
+  // often embed multi-MB JSON in <script> tags, bloating raw HTML past the
+  // size limit even when the visible content is small. These are removed
+  // later anyway, so doing it here keeps real pages under the cap.
+  const stripped = html
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '')
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, '')
+
+  if (stripped.length > MAX_HTML_SIZE) {
     throw new Error(`HTML content exceeds maximum size of ${MAX_HTML_SIZE / 1024 / 1024}MB`)
   }
 
-  const $ = cheerio.load(html)
+  const $ = cheerio.load(stripped)
 
   // Remove noise elements
   for (const sel of NOISE_SELECTORS) {
